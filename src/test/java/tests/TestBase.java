@@ -18,16 +18,16 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class, System.getProperties());
-
         Configuration.browser = driverConfig.getBrowser();
         Configuration.browserSize = driverConfig.getBrowserSize();
         Configuration.browserVersion = driverConfig.getBrowserVersion();
         Configuration.baseUrl = driverConfig.getBaseUrl();
         Configuration.pageLoadStrategy = "eager";
 
-        String remoteUrl = driverConfig.getRemoteUrl();
-        if (remoteUrl != null && !remoteUrl.isEmpty()) {
+        if (driverConfig.isRemote()) {
+            String remoteUrl = driverConfig.getRemoteUrl();
             Configuration.remote = remoteUrl;
+
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
@@ -35,8 +35,6 @@ public class TestBase {
             ));
             Configuration.browserCapabilities = capabilities;
         }
-
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @BeforeEach
