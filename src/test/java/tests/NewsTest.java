@@ -1,6 +1,7 @@
 package tests;
 
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import pages.NewsPage;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("Olgavas1006")
 @Feature("Новости компании")
 public class NewsTest extends TestBase {
 
