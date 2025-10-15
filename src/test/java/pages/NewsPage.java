@@ -6,8 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class NewsPage {
     private SelenideElement newsCompanyTitle = $(byText("Новости компании")),
@@ -23,6 +22,9 @@ public class NewsPage {
     @Step("Скролл к заголовку 'Новости компании' на главной странице")
     public NewsPage scrollToNewsCompanyTitle() {
         newsCompanyTitle.scrollTo().shouldBe(visible);
+        executeJavaScript("arguments[0].scrollIntoView({block: 'center'});", newsCompanyTitle);
+        sleep(1000);
+        newsCompanyTitle.shouldBe(visible);
         return this;
     }
 
