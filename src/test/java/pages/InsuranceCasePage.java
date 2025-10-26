@@ -18,7 +18,7 @@ public class InsuranceCasePage {
 
     @Step("Открыть главную страницу")
     public InsuranceCasePage openMainPage() {
-        open("/");
+        open("");
         return this;
     }
 

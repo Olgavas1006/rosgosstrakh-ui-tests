@@ -16,7 +16,7 @@ public class MenuPage {
 
     @Step("Открыть главную страницу")
     public MenuPage openMainPage() {
-        open("/");
+        open("");
         return this;
     }
 

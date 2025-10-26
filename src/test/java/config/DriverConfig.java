@@ -21,10 +21,6 @@ public interface DriverConfig extends Config {
     @DefaultValue("https://www.rgs.ru")
     String getBaseUrl();
 
-    @Key("isRemote")
-    @DefaultValue("false")
-    Boolean isRemote();
-
     @Key("remoteUrl")
     String getRemoteUrl();
 }

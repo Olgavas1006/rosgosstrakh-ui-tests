@@ -20,7 +20,7 @@ public class SupportPage  {
 
     @Step("Открыть главную страницу")
     public SupportPage openMainPage() {
-        open("/");
+        open("");
         return this;
     }
 

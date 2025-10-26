@@ -15,7 +15,7 @@ public class NewsPage {
 
     @Step("Открыть главную страницу")
     public NewsPage openMainPage() {
-        open("/");
+        open("");
         return this;
     }
 

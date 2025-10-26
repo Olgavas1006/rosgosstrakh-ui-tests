@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
@@ -9,29 +10,23 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class AuthorizationPage {
-    private SelenideElement loginLink = $("a[href*='authorization'] span"),
-            cardContent = $(".card-content"),
+    private SelenideElement loginLink = $("use[href*='i-menu-person']"),
             phoneInput = $("[name='phoneNumber']"),
             loginButton = $("button[name='login']"),
             phoneError = $("#input-error-phoneNumber");
 
     @Step("Открыть главную страницу")
     public AuthorizationPage openMainPage() {
-        open("/");
+        open("");
         return this;
     }
 
     @Step("Нажать на кнопку 'Войти'")
     public AuthorizationPage clickLoginLink() {
-        loginLink.shouldHave(text("Войти")).click();
+        loginLink.click();
         return this;
     }
 
-    @Step("Выбрать 'Личный кабинет клиента'")
-    public AuthorizationPage clickClientAccount() {
-        cardContent.shouldHave(text("Личный кабинет клиента")).click();
-        return this;
-    }
 
     @Step("Ввести номер телефона: {phone}")
     public AuthorizationPage setPhoneNumber(String phone) {

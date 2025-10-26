@@ -16,7 +16,7 @@ public class PurchasePolicyOnlinePage {
 
     @Step("Открыть главную страницу")
     public PurchasePolicyOnlinePage openMainPage() {
-        open("/");
+        open("");
         return this;
     }
 

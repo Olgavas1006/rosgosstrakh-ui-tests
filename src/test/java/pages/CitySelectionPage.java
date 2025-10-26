@@ -16,7 +16,7 @@ public class CitySelectionPage {
 
     @Step("Открыть главную страницу")
     public CitySelectionPage openMainPage() {
-        open("/");
+        open("");
         return this;
     }
 

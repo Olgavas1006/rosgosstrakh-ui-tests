@@ -29,9 +29,6 @@ public class AuthorizationTest extends TestBase {
         step("Нажать на кнопку 'Войти'", () ->
                 authorizationPage.clickLoginLink());
 
-        step("Выбрать 'Личный кабинет клиента'", () ->
-                authorizationPage.clickClientAccount());
-
         step("Ввести случайный номер телефона", () ->
                 authorizationPage.setPhoneNumber(randomPhone));
 

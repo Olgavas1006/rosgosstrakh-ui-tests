@@ -24,8 +24,8 @@ public class TestBase {
         Configuration.baseUrl = driverConfig.getBaseUrl();
         Configuration.pageLoadStrategy = "eager";
 
-        if (driverConfig.isRemote()) {
-            String remoteUrl = driverConfig.getRemoteUrl();
+        String remoteUrl = driverConfig.getRemoteUrl();
+        if (remoteUrl != null && !remoteUrl.isEmpty()) {
             Configuration.remote = remoteUrl;
 
             DesiredCapabilities capabilities = new DesiredCapabilities();
