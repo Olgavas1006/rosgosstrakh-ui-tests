@@ -83,7 +83,6 @@ gradle clean test -Denv=remote
 - *browserSize (размер окна браузера - по умолчанию 1920x1080)*
 - *browserVersion (версия браузера - по умолчанию 127)*
 - *baseUrl (адрес тестируемого веб-сайта - https://www.rgs.ru)*
-- *isRemote (флаг удаленного запуска - true для Selenoid)*
 - *remoteUrl (адрес удаленного сервера Selenoid с учетными данными)*
 
 ----
