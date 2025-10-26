@@ -94,6 +94,11 @@ gradle clean test -Denv=remote
 <img title="Jenkins Build" src="media/screens/jenkins.png">
 </p>
 
+> Сборка с параметрами позволяет перед запуском задать нужные параметры для сборки:
+<p align="center">
+<img title="Jenkins Build" src="media/screens/jenkins param.png">
+</p>
+
 ***Удаленный запуск через Jenkins***
 ```
 clean test 
@@ -110,8 +115,8 @@ clean test
 - *windowSize (размер окна браузера, в котором будут выполняться тесты)*
 - *remoteUrl (адрес удаленного сервера, на котором будут запускаться тесты)*
 - *baseUrl (адрес тестируемого веб-сайта)*
-
-
+- *ENVIRONMENT (стенд для выполнения)*
+- *COMMENT (тег чата для отправки отчета)*
 
 ____
 <a id="allure"></a>
